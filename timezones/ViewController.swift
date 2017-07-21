@@ -30,8 +30,8 @@ class ViewController: UIViewController {
         
         let now = DateInRegion()
         let nowString = now.absoluteDate.string(format: .custom("yyyy-MM-dd'T'HH:mm:ss"))
-        let nowUTC = now.absoluteDate
-        let nowUTCString = nowUTC.string(format: .custom("yyyy-MM-dd'T'HH:mm:ss"), in: regionUTC)
+        let nowUTC = now.toRegion(.GMT())
+        let nowUTCString = nowUTC.absoluteDate.string(format: .custom("yyyy-MM-dd'T'HH:mm:ss"), in: regionUTC)
             print("fechas locales")
             print("    NOW:\(now)")
             print("NOW STR:\(nowString)")
